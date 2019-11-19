@@ -85,11 +85,18 @@ const DataTableBodyScopedProps = {
 
 const DataGroupHeaderScopedProps = {
   group: DataDefaultScopedSlotProps.group,
-  groupedBy: DataOptions.groupBy,
+  groupBy: DataOptions.groupBy,
   items: 'any[]',
   headers: 'TableHeader[]',
   toggle: '() => void',
   remove: '() => void',
+}
+
+const DataGroupSummaryScopedProps = {
+  group: DataDefaultScopedSlotProps.group,
+  groupBy: DataOptions.groupBy,
+  items: 'any[]',
+  headers: 'TableHeader[]',
 }
 
 const DataTableSlots = [
@@ -105,7 +112,7 @@ const DataTableSlots = [
   { name: 'progress', props: DataDefaultScopedSlotProps },
   { name: 'group', props: DataDefaultScopedSlotProps },
   { name: 'group.header', props: DataGroupHeaderScopedProps },
-  { name: 'group.summary', props: DataDefaultScopedSlotProps },
+  { name: 'group.summary', props: DataGroupSummaryScopedProps },
   { name: 'item', props: { ...DataTableItemScopedProps, index: 'number' } },
   { name: 'item.data-table-select', props: DataTableItemScopedProps },
   { name: 'item.data-table-expand', props: DataTableItemScopedProps },
